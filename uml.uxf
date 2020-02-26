@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>20</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>220</x>
+      <y>180</y>
+      <w>480</w>
+      <h>480</h>
+    </coordinates>
+    <panel_attributes>Fahrzeug
+--
+- gewicht: int
+- laufleistung: double
+--
++ Fahrzeug(kg:int)
++ Fahrzeug(kg:int,l:double)
++ getGewicht():int
++ setGewicht(g:int):void
++ getLaufleistung():double
++ toString():String
++ drive(l:double):void
++ drive(l:double:t:double):void
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
