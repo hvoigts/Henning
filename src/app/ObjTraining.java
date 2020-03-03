@@ -6,6 +6,13 @@ package app;
 public class ObjTraining {
 
     public static void main(String[] args) {
+
+        Hund t = new Hund("Bello");
+        Delphin d = new Delphin("Flipper");
+        System.out.println("t="+t.getName()+" "+t.gibLaut());
+        System.out.println("d="+d.getName()+" "+d.kannTauchen());
+        
+        /*
         // 2.1 Erzeugen Sie zwei Instanzen der Klasse Fahrzeug mit dem Namen fa1 und fa2 in der Klasse ObjTraining!
         Fahrzeug fa1 = new Fahrzeug(55);
         Fahrzeug fa2 = new Fahrzeug(75,10000);
@@ -20,7 +27,7 @@ public class ObjTraining {
         fa1.drive(55, 1);
         System.out.println(fa1.toString());
         System.out.println(fa2.toString());
-
+        */
     }
 
     private static int averageWeight(Fahrzeug a,Fahrzeug b) {
