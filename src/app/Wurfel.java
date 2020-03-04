@@ -12,7 +12,7 @@ public class Wurfel {
     }
 
     public void wuerfeln() {
-        this.augen = (int)Math.random()*6+1;
+        this.augen = (int)(Math.random()*6)+1;
     }
 
     public int getAugen() {
