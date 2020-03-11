@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.2">
-  <zoom_level>20</zoom_level>
+  <zoom_level>14</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>220</x>
-      <y>180</y>
-      <w>480</w>
-      <h>480</h>
+      <x>770</x>
+      <y>42</y>
+      <w>336</w>
+      <h>336</h>
     </coordinates>
     <panel_attributes>Fahrzeug
 --
 - gewicht: int
 - laufleistung: double
 --
++ Fahrzeug()
 + Fahrzeug(kg:int)
 + Fahrzeug(kg:int,l:double)
 + getGewicht():int
@@ -25,5 +26,139 @@
 
 </panel_attributes>
     <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>770</x>
+      <y>448</y>
+      <w>420</w>
+      <h>350</h>
+    </coordinates>
+    <panel_attributes>Fahrzeugmarke
+--
+- hersteller:String
+- preis:double
+--
++ Fahrzeugmarke(kg:int)
++ Fahrzeugmarke(kg:int,l:double)
++ setHersteller(s:String):void
++ getHersteller():String
++ setPreis(p:double):void
++ getPreis():double
++ toString():String</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>924</x>
+      <y>364</y>
+      <w>42</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>630</x>
+      <y>896</y>
+      <w>406</w>
+      <h>224</h>
+    </coordinates>
+    <panel_attributes>KFZ
+--
+- dg:Dachgepaecktrager
+--
++ drive(l:double):void
++ drive(l:double:t:double):void
++ toString():String
++ apply(d:Dachgepaecktraeger):void
++ getGewicht():int</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1134</x>
+      <y>896</y>
+      <w>224</w>
+      <h>168</h>
+    </coordinates>
+    <panel_attributes>Fahrrad
+--
+--
++ toString():String</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>742</x>
+      <y>784</y>
+      <w>140</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>80.0;10.0;10.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1078</x>
+      <y>784</y>
+      <w>126</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;70.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>686</x>
+      <y>1204</y>
+      <w>308</w>
+      <h>322</h>
+    </coordinates>
+    <panel_attributes>Dachgepaecktraeger
+--
+- platz1:Fahrrad
+- platz2:Fahrrad
+--
++ set1(f:Fahrrad):void
++ set2(f:Fahrrad):void
++ remove1():void
++ remove2():void
++ getGewicht():double
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>798</x>
+      <y>1106</y>
+      <w>42</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>980</x>
+      <y>1050</y>
+      <w>266</w>
+      <h>266</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1=1
+m2=2</panel_attributes>
+    <additional_attributes>10.0;160.0;160.0;160.0;160.0;10.0</additional_attributes>
   </element>
 </diagram>

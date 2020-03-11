@@ -8,6 +8,11 @@ public class Fahrzeug {
     private int gewicht;
     private double laufleistung;
 
+ 
+    public Fahrzeug() {
+        
+    }
+
     public Fahrzeug(int kg) {
         this.gewicht=kg;
     }
