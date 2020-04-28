@@ -34,7 +34,7 @@ public class ObjTraining {
         System.out.println(kfz2.toString());
         d.remove2();
         System.out.println(kfz1.toString());
-
+        System.out.println("Sie besitzen "+Fahrzeugmarke.getNumberOfProducts()+" Produkte");
     }
 
     private static int averageWeight(Fahrzeug a,Fahrzeug b) {

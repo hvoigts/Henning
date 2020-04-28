@@ -9,7 +9,7 @@ public class Hund extends Tier{
         super(n);
     }
 
-    public String gibLaut() {
-        return "Wuff";
+    public static String gibLaut() {
+        return "wuff";
     }
 }

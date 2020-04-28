@@ -7,17 +7,24 @@ public class Fahrzeugmarke extends Fahrzeug {
 
     private String hersteller;
     private double preis;
+    private static int products;
 
     public Fahrzeugmarke() {
-
+        products++;
     }
 
     public Fahrzeugmarke(int kg) {
         super(kg);
+        products++;
     }
 
     public Fahrzeugmarke(int kg, double l) {
         super(kg,l);
+        products++;
+    }
+
+    public static int getNumberOfProducts() {
+        return products;
     }
 
     public String getHersteller() {
