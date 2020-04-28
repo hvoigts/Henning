@@ -35,7 +35,7 @@ public class Fahrzeug {
     }
 
     public String toString() {
-        return "Laufleistung="+laufleistung+" Gewicht="+gewicht;
+        return "Laufleistung="+laufleistung+" Gewicht="+getGewicht();
     }
 
     public void drive(double l) {

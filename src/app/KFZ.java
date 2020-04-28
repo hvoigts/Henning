@@ -5,9 +5,24 @@ package app;
  */
 public class KFZ extends Fahrzeugmarke {
 
+    private Dachgepaecktraeger dg;
+
     public String toString() {
         return "Ich bin ein KFZ:"+super.toString();
     }
+
+    public void apply(Dachgepaecktraeger d) {
+        dg=d;
+    }
+
+   @Override
+   public int getGewicht() {
+       int gewicht = super.getGewicht();
+       if (dg!=null) {
+        gewicht=gewicht+(int)dg.getGewicht();
+       }
+       return gewicht;
+   }
 
     public void drive(double km) {
         super.drive(km);
