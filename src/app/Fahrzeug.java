@@ -42,10 +42,10 @@ public abstract class Fahrzeug {
         laufleistung=laufleistung+l;
     }
 
-    public void drive(double l,double t) {
+    public void drive(double l,double t) throws ToFastException {
         laufleistung=laufleistung+l*t;
         if (l>getTopSpeed()) {
-            System.out.println(this.toString()+" zu schnell!");
+           throw new ToFastException(this);
         }
     }
 
