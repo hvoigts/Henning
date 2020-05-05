@@ -11,4 +11,9 @@ public class Delphin extends Tier{
         return true;
     }
 
+    @Override
+    public String gibLaut() {
+        return "FiepFiepFiep";
+    }
+
 }
