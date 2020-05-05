@@ -3,7 +3,7 @@ package app;
 /**
  * Fahrzeugmarke
  */
-public class Fahrzeugmarke extends Fahrzeug {
+public abstract class Fahrzeugmarke extends Fahrzeug {
 
     private String hersteller;
     private double preis;

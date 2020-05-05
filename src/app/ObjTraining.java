@@ -28,13 +28,15 @@ public class ObjTraining {
         kfz2.setPreis(6900);
         kfz1.setGewicht(960);
         kfz2.setGewicht(1020);
-        System.out.println(f1);
-        System.out.println(f2);
-        System.out.println(kfz1.toString());
-        System.out.println(kfz2.toString());
-        d.remove2();
-        System.out.println(kfz1.toString());
-        Fahrzeugmarke.printNumberOfProducts();
+
+        Mofa m = new Mofa();
+        m.setHersteller("KTM");
+        m.setPreis(400);
+
+        f1.drive(18, 4);
+        m.drive(36,3);        
+        kfz1.drive(130,6);
+
     }
 
     private static int averageWeight(Fahrzeug a,Fahrzeug b) {

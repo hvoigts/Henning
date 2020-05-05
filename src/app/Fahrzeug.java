@@ -3,7 +3,7 @@ package app;
 /**
  * Fahrzeug
  */
-public class Fahrzeug {
+public abstract class Fahrzeug {
 
     private int gewicht;
     private double laufleistung;
@@ -44,6 +44,11 @@ public class Fahrzeug {
 
     public void drive(double l,double t) {
         laufleistung=laufleistung+l*t;
+        if (l>getTopSpeed()) {
+            System.out.println(this.toString()+" zu schnell!");
+        }
     }
+
+    public abstract int getTopSpeed();
 }
 

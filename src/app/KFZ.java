@@ -24,6 +24,11 @@ public class KFZ extends Fahrzeugmarke {
        return gewicht;
    }
 
+   @Override
+   public int getTopSpeed() {
+       return 200;
+   }
+
     public void drive(double km) {
         super.drive(km);
         setPreis(getPreis()-km*0.3);

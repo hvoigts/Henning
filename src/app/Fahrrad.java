@@ -9,5 +9,10 @@ public class Fahrrad extends Fahrzeugmarke{
         return "Ich bin ein Fahrrad:"+super.toString();
     }
 
+    @Override
+    public int getTopSpeed() {
+        return 20;
+    }
+
   
 }
