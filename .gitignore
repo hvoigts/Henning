@@ -1,0 +1,7 @@
+src/app/*.html
+src/app/*.css
+src/app/*.js
+src/*.css
+src/*.js
+src/*.html
+bin/app/*.class
