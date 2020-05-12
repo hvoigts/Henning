@@ -4,18 +4,18 @@ package app;
  */
 public class ToFastException extends Exception{
     
-    private Fahrzeugmarke obj;
+    private Fahrzeug obj;
    
     /**
      * Konstruktor
      * @param f Fahrzeugmarke
      */
-    public ToFastException(Fahrzeugmarke f) {
+    public ToFastException(Fahrzeug f) {
         obj=f;
     }
 
    
-    public Fahrzeugmarke getFahrzeugmarke() {
+    public Fahrzeug getFahrzeug() {
         return obj;
     }
 }

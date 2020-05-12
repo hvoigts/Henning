@@ -34,7 +34,7 @@ public class KFZ extends Fahrzeugmarke {
         setPreis(getPreis()-km*0.3);
     }
     
-    public void drive(double l,double t) {
+    public void drive(double l,double t) throws ToFastException{
         super.drive(l, t);
         setPreis(getPreis()-l*t*0.3);
     }

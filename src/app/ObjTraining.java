@@ -33,9 +33,15 @@ public class ObjTraining {
         m.setHersteller("KTM");
         m.setPreis(400);
 
-        f1.drive(18, 4);
-        m.drive(36,3);        
-        kfz1.drive(130,6);
+        try {
+            f1.drive(18, 4);
+            m.drive(36,3);        
+            kfz1.drive(130,6);
+        }
+        catch (ToFastException tfe) {
+            System.out.println("Ein Fahrzeug ist zu schnell gewesen!");
+            System.out.println(tfe.getFahrzeug().toString());
+        }
 
     }
 
