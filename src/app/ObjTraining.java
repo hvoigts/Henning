@@ -33,16 +33,15 @@ public class ObjTraining {
         m.setHersteller("KTM");
         m.setPreis(400);
 
-        try {
-            f1.drive(18, 4);
-            m.drive(36,3);        
-            kfz1.drive(130,6);
-        }
-        catch (ToFastException tfe) {
-            System.out.println("Ein Fahrzeug ist zu schnell gewesen!");
-            System.out.println(tfe.getFahrzeug().toString());
-        }
+        Servicepartner au = new Vertragswerkstatt();
+        kfz1.setServicepartner(au);
+        kfz1.setWartungsIntervall(10000);
+       
+        kfz1.drive(4900);
+        kfz1.drive(500);
+        kfz1.drive(5500);
 
+        System.out.println("KFZ1:"+kfz1.toString());
     }
 
     private static int averageWeight(Fahrzeug a,Fahrzeug b) {

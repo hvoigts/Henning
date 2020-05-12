@@ -3,7 +3,7 @@ package app;
 /**
  * Tier
  */
-public abstract class Tier {
+public  class Tier {
 
     private String name;
     
@@ -14,6 +14,4 @@ public abstract class Tier {
     public String getName() {
         return name;
     }
-
-    public abstract String gibLaut();
 }
