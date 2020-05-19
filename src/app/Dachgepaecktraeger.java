@@ -1,6 +1,6 @@
 package app;
 
-public class Dachgepaecktraeger {
+public class Dachgepaecktraeger implements Applyable{
     private Fahrrad platz1;
     private Fahrrad platz2;
 

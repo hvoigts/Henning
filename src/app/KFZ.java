@@ -5,44 +5,10 @@ package app;
  */
 public class KFZ extends Fahrzeugmarke {
 
-    private Dachgepaecktraeger dg;
+    private Applyable dg;
     private Servicepartner sp=null;
     private int wartungsIntervall=5000;
     private int letzteWartung=0;
-
-    public void setWartungsIntervall(int wartungsIntervall) {
-        this.wartungsIntervall = wartungsIntervall;
-    }
-
-    public int getWartungsIntervall() {
-        return wartungsIntervall;
-    }
-
-    public void setServicepartner(Servicepartner s) {
-        sp=s;
-    }
-
-    public String toString() {
-        return "Ich bin ein KFZ:"+super.toString();
-    }
-
-    public void apply(Dachgepaecktraeger d) {
-        dg=d;
-    }
-
-   @Override
-   public int getGewicht() {
-       int gewicht = super.getGewicht();
-       if (dg!=null) {
-        gewicht=gewicht+(int)dg.getGewicht();
-       }
-       return gewicht;
-   }
-
-   @Override
-   public int getTopSpeed() {
-       return 200;
-   }
 
     public void drive(double km) {
         super.drive(km);
@@ -61,4 +27,40 @@ public class KFZ extends Fahrzeugmarke {
             System.out.println("Das Fahrzeug musste gewartet werden und das kostete:"+sp.wartung(this));            
         }
     }
+
+    public void setWartungsIntervall(int wartungsIntervall) {
+        this.wartungsIntervall = wartungsIntervall;
+    }
+
+    public int getWartungsIntervall() {
+        return wartungsIntervall;
+    }
+
+    public void setServicepartner(Servicepartner s) {
+        sp=s;
+    }
+
+    public String toString() {
+        return "Ich bin ein KFZ:"+super.toString();
+    }
+
+    public void apply(Applyable d) {
+        dg=d;
+    }
+
+   @Override
+   public int getGewicht() {
+       int gewicht = super.getGewicht();
+       if (dg!=null) {
+        gewicht=gewicht+(int)dg.getGewicht();
+       }
+       return gewicht;
+   }
+
+   @Override
+   public int getTopSpeed() {
+       return 200;
+   }
+
+  
 }

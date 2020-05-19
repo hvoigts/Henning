@@ -8,7 +8,8 @@ public class ObjTraining {
     public static void main(String[] args) {
         Fahrrad f1 = new Fahrrad();
         Fahrrad f2 = new Fahrrad();
-        Dachgepaecktraeger d = new Dachgepaecktraeger();
+        SkiBox d = new SkiBox();
+        d.add(10);
 
         f1.setHersteller("Gudereit");
         f2.setHersteller("Kettler");
@@ -18,8 +19,8 @@ public class ObjTraining {
         f2.setGewicht(15);
         
         KFZ kfz1 = new KFZ();
-        d.set1(f1);
-        d.set2(f2);
+        //d.set1(f1);
+        //d.set2(f2);
         kfz1.apply(d);
         KFZ kfz2 = new KFZ();
         kfz1.setHersteller("Opel");
@@ -33,10 +34,11 @@ public class ObjTraining {
         m.setHersteller("KTM");
         m.setPreis(400);
 
-        Servicepartner au = new Vertragswerkstatt();
-        kfz1.setServicepartner(au);
-        kfz1.setWartungsIntervall(10000);
+        //Servicepartner au = new Vertragswerkstatt();
+        //kfz1.setServicepartner(au);
+        //kfz1.setWartungsIntervall(10000);
        
+        
         kfz1.drive(4900);
         kfz1.drive(500);
         kfz1.drive(5500);

@@ -1,53 +1,51 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.2">
-  <zoom_level>11</zoom_level>
+  <zoom_level>8</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>220</x>
+      <x>232</x>
       <y>0</y>
-      <w>264</w>
-      <h>286</h>
+      <w>336</w>
+      <h>208</h>
     </coordinates>
     <panel_attributes>/Fahrzeug/
 --
-- gewicht: int
-- laufleistung: double
+- gewicht:double
+- laufleistung:int
 --
-+ Fahrzeug()
-+ Fahrzeug(kg:int)
-+ Fahrzeug(kg:int,l:double)
-+ getGewicht():int
-+ setGewicht(g:int):void
-+ getLaufleistung():double
++ Fahrzeug(gewicht:double)
++ Fahrzeug(gewicht:double,laufleistung:int)
++ getGewicht():double
++ setGewicht(d:double):void
++ getLaufleistung():int
++ drive(km:int):void
++ drive(km:int,dauer:int):void
 + toString():String
-+ drive(l:double):void
-+ drive(l:double:t:double):void
 /+ getTopSpeed():int/
-
 </panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>187</x>
-      <y>319</y>
-      <w>363</w>
-      <h>297</h>
+      <x>232</x>
+      <y>240</y>
+      <w>336</w>
+      <h>192</h>
     </coordinates>
-    <panel_attributes>/Fahrzeugmarke/
+    <panel_attributes>/FahrzeugMarke/
 --
 - hersteller:String
 - preis:double
 _- anzahl:int_
 --
-+ Fahrzeugmarke(kg:int)
-+ Fahrzeugmarke(kg:int,l:double)
++ FahrzeugMarke(gewicht:double)
++ FahrzeugMarke(gewicht:double,laufleistung:int)
 + setHersteller(s:String):void
 + getHersteller():String
-+ setPreis(p:double):void
 + getPreis():double
++ setPreis(d:double):void
 + toString():String
 _+ printNumberOfProducts():void_</panel_attributes>
     <additional_attributes/>
@@ -55,41 +53,21 @@ _+ printNumberOfProducts():void_</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>341</x>
-      <y>275</y>
-      <w>33</w>
-      <h>66</h>
+      <x>392</x>
+      <y>200</y>
+      <w>24</w>
+      <h>56</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>110</x>
-      <y>671</y>
-      <w>319</w>
-      <h>198</h>
-    </coordinates>
-    <panel_attributes>KFZ
---
-- dg:Dachgepaecktrager
---
-+ drive(l:double):void
-+ drive(l:double:t:double):void
-+ toString():String
-+ apply(d:Dachgepaecktraeger):void
-+ getGewicht():int
-+ getToSpeed():int</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>506</x>
-      <y>671</y>
-      <w>176</w>
-      <h>132</h>
+      <x>176</x>
+      <y>464</y>
+      <w>120</w>
+      <h>72</h>
     </coordinates>
     <panel_attributes>Fahrrad
 --
@@ -99,45 +77,30 @@ _+ printNumberOfProducts():void_</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>198</x>
-      <y>605</y>
-      <w>110</w>
-      <h>88</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>80.0;10.0;10.0;60.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>462</x>
-      <y>605</y>
-      <w>99</w>
-      <h>88</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;70.0;60.0</additional_attributes>
-  </element>
-  <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>154</x>
-      <y>913</y>
-      <w>242</w>
-      <h>253</h>
+      <x>448</x>
+      <y>464</y>
+      <w>304</w>
+      <h>232</h>
     </coordinates>
-    <panel_attributes>Dachgepaecktraeger
+    <panel_attributes>KFZ
 --
-- platz1:Fahrrad
-- platz2:Fahrrad
+- dg:Applyable
+- sp:Servicepartner
+- wartungsintervall:int
+- letzteWartung:int
 --
-+ set1(f:Fahrrad):void
-+ set2(f:Fahrrad):void
-+ remove1():void
-+ remove2():void
++ drive(km:int):void
++ drive(km:int,dauer:int):void
++ apply(d:Applyable):void
++ toString():String
 + getGewicht():double
++ getTopSpeed():int
++ setServicepartner(sp:Servicepartner):void
++ setWartungsitervall(i:int):void
++ getWartungsintervall():int
+- driveWartung():void
 
 </panel_attributes>
     <additional_attributes/>
@@ -145,34 +108,65 @@ _+ printNumberOfProducts():void_</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>242</x>
-      <y>858</y>
-      <w>33</w>
-      <h>77</h>
+      <x>208</x>
+      <y>424</y>
+      <w>88</w>
+      <h>56</h>
     </coordinates>
-    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>90.0;10.0;10.0;50.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>385</x>
-      <y>792</y>
-      <w>209</w>
-      <h>209</h>
+      <x>424</x>
+      <y>424</y>
+      <w>80</w>
+      <h>56</h>
     </coordinates>
-    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
-m1=1
-m2=2</panel_attributes>
-    <additional_attributes>10.0;160.0;160.0;160.0;160.0;10.0</additional_attributes>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;80.0;50.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>649</x>
-      <y>462</y>
-      <w>176</w>
-      <h>132</h>
+      <x>240</x>
+      <y>752</y>
+      <w>168</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>Dachgepaecktraeger
+--
+f1:Fahrrad
+f2:Fahrrad
+--
++ set1(f:Fahrrad):void
++ set2(f:Fahrrad):void
++ remove1():Fahrrad
++ remove2():Fahrrad
++ getGewicht():double</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>184</x>
+      <y>528</y>
+      <w>72</w>
+      <h>280</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1=1
+m2=2</panel_attributes>
+    <additional_attributes>70.0;320.0;10.0;320.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>632</x>
+      <y>344</y>
+      <w>120</w>
+      <h>72</h>
     </coordinates>
     <panel_attributes>Mofa
 --
@@ -184,12 +178,155 @@ m2=2</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>539</x>
-      <y>528</y>
-      <w>132</w>
-      <h>33</h>
+      <x>560</x>
+      <y>360</y>
+      <w>88</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;90.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>848</x>
+      <y>432</y>
+      <w>216</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>/Service Partner/
+&lt;&lt;Interface&gt;&gt;
+--
+--
++ wartung(Fahrzeug):double
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>832</x>
+      <y>608</y>
+      <w>216</w>
+      <h>104</h>
+    </coordinates>
+    <panel_attributes>AutoUnger
+--
+--
++ wartung(Fahrzeug):double</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>928</x>
+      <y>352</y>
+      <w>24</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;100.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>848</x>
+      <y>256</y>
+      <w>216</w>
+      <h>104</h>
+    </coordinates>
+    <panel_attributes>Vertragswerkstatt
+--
+--
++ wartung(Fahrzeug):double</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>928</x>
+      <y>520</y>
+      <w>24</w>
+      <h>104</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>744</x>
+      <y>512</y>
+      <w>120</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>130.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>472</x>
+      <y>768</y>
+      <w>176</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>/Applyable/
+&lt;&lt;Interface&gt;&gt;
+--
+--
++ getGewicht():double
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>400</x>
+      <y>816</y>
+      <w>88</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>90.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>544</x>
+      <y>688</y>
+      <w>24</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;100.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>720</x>
+      <y>776</y>
+      <w>168</w>
+      <h>104</h>
+    </coordinates>
+    <panel_attributes>SkiBox
+--
+- gewicht:int
+--
++ getGewicht():double
++ add(kg:int):void
++ remove(kg:int):void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>640</x>
+      <y>816</y>
+      <w>96</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
     <additional_attributes>10.0;10.0;100.0;10.0</additional_attributes>
   </element>
 </diagram>
