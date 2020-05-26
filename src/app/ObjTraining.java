@@ -9,7 +9,7 @@ public class ObjTraining {
 
     public static void main(String[] args) {
 
-        
+       
 
         Fahrrad f1 = new Fahrrad();
         Fahrrad f2 = new Fahrrad();
@@ -47,18 +47,18 @@ public class ObjTraining {
         //kfz1.setServicepartner(au);
         //kfz1.setWartungsIntervall(10000);
 
-        Fahrzeugmarke fuhrpark[] = new Fahrzeugmarke[5];
+        ArrayList<Fahrzeugmarke> fuhrpark = new ArrayList<Fahrzeugmarke>();
       
-        fuhrpark[0]=f1;
-        fuhrpark[1]=kfz1;
-        fuhrpark[2]=kfz2;
-        fuhrpark[3]=f2;
-        fuhrpark[4]=kfz3;
+        fuhrpark.add(f1);
+        fuhrpark.add(kfz1);
+        fuhrpark.add(kfz2);
+        fuhrpark.add(f2);
+        fuhrpark.add(kfz3);
         
         // 8.5 Gesamtgwicht berechnen
         int gesGewicht=0;
-        for (int i=0;i<fuhrpark.length;i++) {
-            gesGewicht=gesGewicht+fuhrpark[i].getGewicht();
+        for (int i=0;i<fuhrpark.size();i++) {
+            gesGewicht=gesGewicht+fuhrpark.get(i).getGewicht();
         }
         System.out.println("Das Gesamtgewicht beträgt:"+gesGewicht);
         
