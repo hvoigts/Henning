@@ -10,6 +10,20 @@ public class KFZ extends Fahrzeugmarke {
     private int wartungsIntervall=5000;
     private int letzteWartung=0;
 
+
+    public void apply(Applyable d) {
+        dg=d;
+    }
+    
+    @Override
+    public int getGewicht() {
+        int gewicht = super.getGewicht();
+        if (dg!=null) {
+         gewicht=gewicht+(int)dg.getGewicht();
+        }
+        return gewicht;
+    }
+
     public void drive(double km) {
         super.drive(km);
         setPreis(getPreis()-km*0.3);
@@ -44,18 +58,7 @@ public class KFZ extends Fahrzeugmarke {
         return "Ich bin ein KFZ:"+super.toString();
     }
 
-    public void apply(Applyable d) {
-        dg=d;
-    }
-
-   @Override
-   public int getGewicht() {
-       int gewicht = super.getGewicht();
-       if (dg!=null) {
-        gewicht=gewicht+(int)dg.getGewicht();
-       }
-       return gewicht;
-   }
+  
 
    @Override
    public int getTopSpeed() {
