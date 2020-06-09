@@ -5,6 +5,15 @@ package app;
  */
 public class KFZ extends Fahrzeugmarke {
 
+    private static FahrtenBuch fb;
+
+    public static void setFahrtenBuch(FahrtenBuch f) {
+        fb=f;
+    }
+    public static FahrtenBuch getFahrtenBuch() {
+        return fb;
+    }
+
     private Applyable dg;
     private Servicepartner sp=null;
     private int wartungsIntervall=5000;
@@ -31,6 +40,9 @@ public class KFZ extends Fahrzeugmarke {
             letzteWartung=letzteWartung+wartungsIntervall;
             System.out.println("Das Fahrzeug musste gewartet werden und das kostete:"+sp.wartung(this));            
         }
+        if (fb!=null) {
+            fb.log(this);
+        }
     }
     
     public void drive(double l,double t) throws ToFastException{
@@ -39,6 +51,9 @@ public class KFZ extends Fahrzeugmarke {
         if (getLaufleistung()>letzteWartung+wartungsIntervall && sp!=null) {
             letzteWartung=letzteWartung+wartungsIntervall;
             System.out.println("Das Fahrzeug musste gewartet werden und das kostete:"+sp.wartung(this));            
+        }
+        if (fb!=null) {
+            fb.log(this);
         }
     }
 

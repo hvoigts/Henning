@@ -9,6 +9,7 @@ public class ObjTraining {
 
     public static void main(String[] args) {
         FahrtenBuch fb = new FahrtenBuch("d:\\\\Temp\\buch.txt");
+        KFZ.setFahrtenBuch(fb);
         
         Fahrrad f1 = new Fahrrad();
         Fahrrad f2 = new Fahrrad();
@@ -64,6 +65,7 @@ public class ObjTraining {
         kfz1.drive(12000);
         kfz2.drive(22000);
         kfz3.drive(43000);
+        kfz1.drive(333);
         f1.drive(500);
         f2.drive(1500);
         
