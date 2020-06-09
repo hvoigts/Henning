@@ -8,9 +8,8 @@ import java.util.ArrayList;
 public class ObjTraining {
 
     public static void main(String[] args) {
-
-       
-
+        FahrtenBuch fb = new FahrtenBuch("d:\\\\Temp\\buch.txt");
+        
         Fahrrad f1 = new Fahrrad();
         Fahrrad f2 = new Fahrrad();
         SkiBox d = new SkiBox();
@@ -74,6 +73,7 @@ public class ObjTraining {
             gesPreis=gesPreis+(int)f.getPreis();
         }
         System.out.println("Ges. Preis ist: "+gesPreis);
+        
     }
 
     private static int averageWeight(Fahrzeug a,Fahrzeug b) {
